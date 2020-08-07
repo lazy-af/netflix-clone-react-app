@@ -1,0 +1,145 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.295);
+  z-index: 4;
+  transition: all 0.5s linear;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 70vw;
+  background-color: black;
+  color: white;
+  display: flex;
+}
+
+.img-container-modal {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+.close-big {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.poster-image-modal {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.backdrop-image-modal {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  display: none;
+}
+
+.info-container-modal {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.discription {
+  width: 90%;
+}
+
+.button-modal {
+  padding: 10px 30px;
+  cursor: pointer;
+  background-color: red;
+  border: 1px solid red;
+  margin-right: 10px;
+  color: white;
+}
+
+.button-modal:hover {
+  background-color: white;
+  color: red;
+}
+
+.button-container {
+  padding: 10px 0 30px;
+  text-align: left;
+}
+
+.tag {
+  padding: 3px;
+  border: 1px solid white;
+  margin: 3px;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+    width: 80vw;
+  }
+  .img-container-modal {
+    width: 100%;
+    height: 35%;
+    overflow: hidden;
+  }
+  .poster-image-modal {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: none;
+  }
+
+  .backdrop-image-modal {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: inline-block;
+  }
+  .info-container-modal {
+    padding: 10px;
+    width: 100%;
+    height: 65%;
+    margin-top: 0px;
+    margin-left: 10px;
+    overflow-y: scroll;
+  }
+  .close {
+    position: absolute;
+    display: block;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+  }
+  .close-big {
+    display: none;
+  }
+  .discription {
+    width: 95%;
+  }
+}

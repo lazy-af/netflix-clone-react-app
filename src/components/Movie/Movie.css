@@ -1,0 +1,15 @@
+.movie-container {
+  padding: 13px;
+  color: white;
+}
+
+.poster-image {
+  width: 200px;
+  height: auto;
+  transition: all 0.5s linear;
+}
+
+.poster-image:hover {
+  cursor: pointer;
+  transform: scale(1.09);
+}

@@ -1,0 +1,1 @@
+// 1. solve the truncate problem in Banner.jsx.

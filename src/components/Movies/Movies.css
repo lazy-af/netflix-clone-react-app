@@ -1,0 +1,11 @@
+.heading-title {
+  color: white;
+  padding: 0px 15px;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+
+.movies-list {
+  display: flex;
+  overflow-x: scroll;
+}
