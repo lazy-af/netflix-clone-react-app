@@ -1,0 +1,7 @@
+.search-bar {
+  background-color: #f0f1f3;
+  border: none;
+}
+.search-bar::placeholder {
+  color: #b9c3cf;
+}

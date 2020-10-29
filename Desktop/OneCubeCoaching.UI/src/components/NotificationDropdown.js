@@ -1,0 +1,102 @@
+
+import React, { Component } from 'react';
+import Link from 'next/link';
+import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
+
+// import SimpleBar from 'simplebar-react';
+
+const notificationContainerStyle = {
+    maxHeight: '230px',
+    display: 'none',
+};
+
+const notificationShowContainerStyle = {
+    maxHeight: '230px',
+};
+
+class NotificationDropdown extends Component {
+    static defaultProps = {
+        notifications: [],
+    };
+
+    constructor(props) {
+        super(props);
+        this.toggleDropdown = this.toggleDropdown.bind(this);
+
+        this.state = {
+            dropdownOpen: false,
+            notificationContainerStyle: notificationContainerStyle,
+        };
+    }
+
+    /*:: toggleDropdown: () => void */
+    toggleDropdown() {
+        this.setState({
+            dropdownOpen: !this.state.dropdownOpen,
+            notificationContainerStyle:
+                this.state.notificationContainerStyle === notificationContainerStyle
+                    ? notificationShowContainerStyle
+                    : notificationContainerStyle,
+        });
+    }
+
+    getRedirectUrl = (item) => {
+        return `/notification/${item.id}`;
+    };
+
+    render() {
+        return (
+            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
+                <DropdownToggle
+                    data-toggle="dropdown"
+                    tag="button"
+                    className="nav-link dropdown-toggle arrow-none btn btn-link"
+                    onClick={this.toggleDropdown}
+                    aria-expanded={this.state.dropdownOpen}>
+                    <i className="mdi mdi-bell-outline noti-icon"></i>
+                    <span className="noti-icon-badge"></span>
+                </DropdownToggle>
+                <DropdownMenu right className="dropdown-menu-animated dropdown-lg">
+                    <div onClick={this.toggleDropdown}>
+                        <div className="dropdown-item noti-title">
+                            <h5 className="m-0">
+                                <span className="float-right">
+                                    <a href="/notifications" className="text-dark">
+                                        <small>Clear All</small>
+                                    </a>
+                                </span>
+                                Notification
+                            </h5>
+                        </div>
+                        {/*<SimpleBar style={this.state.notificationContainerStyle}>*/}
+                        {/*    {this.props.notifications.map((item, i) => {*/}
+                        {/*        return (*/}
+                        {/*            <a*/}
+                        {/*                href={this.getRedirectUrl(item)}*/}
+                        {/*                className="dropdown-item notify-item"*/}
+                        {/*                key={i + '-noti'}>*/}
+                        {/*                <>*/}
+                        {/*                <div className={`notify-icon bg-${item.bgColor}`}>*/}
+                        {/*                    <i className={item.icon}></i>*/}
+                        {/*                </div>*/}
+                        {/*                <p className="notify-details">*/}
+                        {/*                    {item.text}*/}
+                        {/*                    <small className="text-muted">{item.subText}</small>*/}
+                        {/*                </p>*/}
+                        {/*                    </>*/}
+                        {/*            </a>*/}
+                        {/*        );*/}
+                        {/*    })}*/}
+                        {/*</SimpleBar>*/}
+
+                        <a href="/" className="dropdown-item text-center text-primary notify-item notify-all">
+                            <a>View All</a>
+                        </a>
+                    </div>
+                </DropdownMenu>
+            </Dropdown>
+        );
+    }
+}
+
+export default NotificationDropdown;

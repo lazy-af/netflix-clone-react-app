@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+  margin: 40px;
+}
+
+body {
+  background-color: #f0f1f3;
+}
+
+.shadow {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.sidebar-container {
+  background-color: white;
+  margin-left: 40px;
+  height: 90vh;
+}
+
+.integration-container {
+  background-color: white;
+  margin-left: 20px;
+  height: 90vh;
+}

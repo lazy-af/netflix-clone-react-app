@@ -1,0 +1,16 @@
+.feature-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  padding: 10px 20px;
+  margin-bottom: 40px;
+}
+
+.card-img {
+  padding: 20px 50px;
+  height: 100px;
+  width: auto;
+}
+
+.feature-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
